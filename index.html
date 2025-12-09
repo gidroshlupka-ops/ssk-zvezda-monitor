@@ -5,57 +5,6 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230ea5e9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='5' r='3'/%3E%3Cline x1='12' y1='22' x2='12' y2='8'/%3E%3Cpath d='M5 12H2a10 10 0 0 0 20 0h-3'/%3E%3C/svg%3E" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SSK Zvezda Monitor</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              'zvezda-blue': {
-                50: '#f0f9ff',
-                100: '#e0f2fe',
-                200: '#bae6fd',
-                300: '#7dd3fc',
-                400: '#38bdf8',
-                500: '#0ea5e9',
-                600: '#0284c7',
-                700: '#0369a1',
-                800: '#075985',
-                900: '#0c4a6e',
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      /* Custom scrollbar for tables */
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-track {
-        background: #f1f5f9;
-      }
-      .dark .custom-scrollbar::-webkit-scrollbar-track {
-        background: #1e293b;
-      }
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
-        border-radius: 3px;
-      }
-      .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #475569;
-      }
-    </style>
   <script type="importmap">
 {
   "imports": {
