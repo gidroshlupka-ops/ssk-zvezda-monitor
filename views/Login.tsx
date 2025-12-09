@@ -97,7 +97,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         </form>
         
         <div className="bg-slate-50 dark:bg-slate-700/50 p-4 text-center text-xs text-slate-400 border-t border-slate-100 dark:border-slate-700">
-           &copy; 2024 ССК ЗВЕЗДА. Конфиденциально.
+           &copy; 2025 ССК ЗВЕЗДА. Конфиденциально.
         </div>
       </div>
     </div>
