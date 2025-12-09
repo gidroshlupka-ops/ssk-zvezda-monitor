@@ -1,13 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Access environment variables. 
-// In a real CRA/Vite app these are typically import.meta.env or process.env
-// For this environment, we assume they are injected or hardcoded if needed for demo.
-
+// URL вашего проекта из настроек Data API (согласно скриншоту)
 const SUPABASE_URL = 'https://nnnoqeepxzdfgonljsuk.supabase.co';
-// WARNING: In a real production app, ensure Anon Key is restricted by RLS (Row Level Security)
-// Since this is a demo/diploma, we use it directly. 
-// User needs to provide their key here or in env vars.
-const SUPABASE_ANON_KEY = process.env.REACT_APP_SUPABASE_ANON_KEY || ''; 
 
-export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Анонимный ключ (public key). 
+// В Vite переменные окружения обязательно должны начинаться с VITE_ и вызываться через import.meta.env
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+// Создаем клиент. 
+// Если ключа нет (например, не создан файл .env), возвращаем null, чтобы сайт не падал с ошибкой.
+export const supabase = (SUPABASE_ANON_KEY) 
+  ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) 
+  : null;
