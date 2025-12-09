@@ -1,14 +1,19 @@
 import { createClient } from '@supabase/supabase-js';
 
-// URL вашего проекта из настроек Data API (согласно скриншоту)
+// ВАШ URL из настроек Supabase (согласно вашему ID nnnoqeepxzdfgonljsuk)
 const SUPABASE_URL = 'https://nnnoqeepxzdfgonljsuk.supabase.co';
 
-// Анонимный ключ (public key). 
-// В Vite переменные окружения обязательно должны начинаться с VITE_ и вызываться через import.meta.env
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// ВАЖНО: Вставьте ваш ключ (anon public) внутрь кавычек ниже вместо пустой строки.
+// Пример: const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...';
+const SUPABASE_KEY = 'sb_publishable_SjF1LvHA7_BieV8NmTBOnA_UM78sDx7'; 
 
-// Создаем клиент. 
-// Если ключа нет (например, не создан файл .env), возвращаем null, чтобы сайт не падал с ошибкой.
-export const supabase = (SUPABASE_ANON_KEY) 
-  ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) 
+// Если ключ не вставлен в кавычки выше, пробуем взять из файла .env
+const FINAL_KEY = SUPABASE_KEY || import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+if (!FINAL_KEY) {
+  console.error("CRITICAL ERROR: Supabase Key is missing! Please paste it in services/supabaseClient.ts");
+}
+
+export const supabase = FINAL_KEY 
+  ? createClient(SUPABASE_URL, FINAL_KEY) 
   : null;
