@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './index.css'; // Импорт стилей обязателен!
+import './index.css';
 
 // Простой компонент для отлова ошибок (чтобы не было белого экрана)
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean, error: any}> {
@@ -28,35 +28,39 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasErr
           alignItems: 'center',
           justifyContent: 'center',
           padding: '2rem',
-          backgroundColor: '#1e293b',
+          backgroundColor: '#0f172a',
           color: 'white',
-          fontFamily: 'sans-serif'
+          fontFamily: 'sans-serif',
+          textAlign: 'center'
         }}>
-          <h1 style={{fontSize: '2rem', marginBottom: '1rem'}}>Упс! Произошла ошибка.</h1>
-          <p style={{color: '#94a3b8', marginBottom: '2rem'}}>Приложение упало. Покажите этот текст разработчику.</p>
+          <h1 style={{fontSize: '2rem', marginBottom: '1rem', color: '#ef4444'}}>Системная ошибка</h1>
+          <p style={{color: '#94a3b8', marginBottom: '2rem'}}>Приложение завершило работу аварийно.</p>
           <div style={{
-            backgroundColor: '#0f172a',
+            backgroundColor: '#1e293b',
             padding: '1.5rem',
             borderRadius: '0.5rem',
-            maxWidth: '800px',
+            maxWidth: '600px',
+            width: '100%',
             overflow: 'auto',
-            border: '1px solid #334155'
+            border: '1px solid #334155',
+            textAlign: 'left',
+            marginBottom: '2rem'
           }}>
-            <code style={{color: '#ef4444', whiteSpace: 'pre-wrap'}}>
+            <code style={{color: '#f87171', whiteSpace: 'pre-wrap', fontSize: '0.875rem'}}>
               {this.state.error?.toString()}
             </code>
           </div>
           <button 
             onClick={() => window.location.reload()}
             style={{
-              marginTop: '2rem',
-              padding: '0.75rem 1.5rem',
+              padding: '0.75rem 2rem',
               backgroundColor: '#3b82f6',
               color: 'white',
               border: 'none',
               borderRadius: '0.5rem',
               cursor: 'pointer',
-              fontWeight: 'bold'
+              fontWeight: 'bold',
+              fontSize: '1rem'
             }}
           >
             Перезагрузить страницу
