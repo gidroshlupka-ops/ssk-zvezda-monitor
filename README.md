@@ -74,14 +74,13 @@
    npm run dev
    ```
 
-   ## ⚙️ Установка и запуск
+   ## ⚙️ Просмотр сайта
 
-1. **Просмотр сайта**
-   Перейдите по ссылке
+1. **Перейдите по ссылке**
    ```bash
    https://gidroshlupka-ops.github.io/ssk-zvezda-monitor
    ```
-   Пароль и логин:
+2. **Логин и пароль**
    ```bash
    admin
    Ssk-Zvezda-Secure-Cloud-99!#
